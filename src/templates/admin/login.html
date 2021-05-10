@@ -1,0 +1,27 @@
+{% extends 'admin/admin-base.html' %} {% block title %}Admin Login{% endblock
+title %} {% block content %}
+<main>
+    <section id="login">
+        <div class="login">
+            <h1 class="login__headline">Admin Login</h1>
+            {% if form.errors.items() %}
+            <ul>
+                {% for field, errors in form.errors.items() %} {% for error in
+                errors %}
+                <li class="login__error">{{error}}</li>
+                {% endfor %} {% endfor %}
+            </ul>
+            {% endif %}
+            <form method="post" action="/admin/login" class="login__form">
+                {{form.hidden_tag()}} {% for field in form if
+                field.widget.input_type != 'hidden' %}
+                {{field.label(class_="login__form__label")}}
+                {{field(class_="login__form__input")}} {% endfor %}
+                <span class="login__form__error">{{error}}</span>
+                <a href="/" class="login__form__cancel">Cancel</a>
+                <button type="submit" class="login__form__submit">Login</button>
+            </form>
+        </div>
+    </section>
+</main>
+{% endblock content %}

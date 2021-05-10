@@ -1,0 +1,129 @@
+Kraken Color Palette:
+
+Deep Sea Blue (dark blue)
+Hex: #001628;
+
+Ice Blue (light blue)
+Hex: #99D9D9;
+
+Boundless Blue (dark middle blue)
+Hex: #355464;
+
+Shadow Blue (light middle blue)
+Hex: #68A2B9;
+
+Red Alert
+Hex: #E9072B;
+
+#######################################
+
+Bruins Color Palette:
+Gold
+Hex: #FFB81C;
+
+Black
+Hex: #000000;
+
+White
+Hex: #FFFFFF;
+
+#######################################
+
+Pop Princess Color Palette:
+Blue Green
+Hex: #3AA7A0;
+
+Cinnabar
+Hex: #F34C50;
+
+Rose Quartz:
+Hex: #F7C9C0;
+
+Cyan
+Hex: #9FD9D0;
+
+#######################################
+
+DARK MODE:
+
+Background-Primary: #355464;
+Background-Secondary: #001628;
+Text-Main-Primary: #FFFFFF;
+Text-Main-Secondary: #99D9D9;
+Text-Alt: #001628;
+Form-Text: #E2E2E2;
+Form-Background: #000000;
+Div-Card-Button: #68A2B9;
+Accent: #E9072B;
+
+Font-Primary: Poppins
+Font-Secondary: Sen
+
+#######################################
+
+LIGHT MODE:
+
+Background-Primary: #99D9D9;
+Background-Secondary: #99D9B9;
+Text-Main-Primary: #000000;
+Text-Main-Secondar: #000000;
+Text-Alt: #000000;
+Form-Text: #000000;
+Form-Background: #FFFFFF;
+Div-Card-Button: #99B9D9;
+Accent: #d99999;
+
+Font-Primary: Poppins
+Font-Secondary: Sen
+
+#######################################
+
+CORAL MODE:
+
+Background-Primary: #3AA7A0;
+Background-Secondary: #9FD9D0;
+Text-Main-Primary: #;
+Text-Main-Secondary: #;
+Text-Alt: #;
+Form-Text: #000000;
+Form-Background: #F7C9C0;
+Div-Card-Button: #F7C9C0;
+Accent: #a73a41;
+
+Font-Primary: Poppins
+Font-Secondary: Sen
+
+Body: #;
+Divs: #; #;
+Text: #000000;
+Secondary-Text: #001628;
+Accent: #F34C50;
+
+#######################################
+
+BRUINS/SHARP MODE:
+
+Background-Primary: #;
+Background-Secondary: #;
+Text-Main-Primary: #;
+Text-Main-Secondary: #;
+Text-Alt: #;
+Form-Text: #;
+Form-Background: #;
+Div-Card-Button: #;
+Accent: #;
+
+Font-Primary: Poppins
+Font-Secondary: Sen
+
+
+Body: #000000;
+Divs: #FFB81C;
+Text: #000000;
+Secondary-Text: #FFFFFF;
+Accent: #E9072B;
+
+
+Fonts:
+Sen (400, 700), Poppins (300,400,700):
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Sen:wght@400;700&display=swap');
