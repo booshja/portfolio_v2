@@ -1,3 +1,5 @@
+@import "colors";
+
 $themes: (
     dark: (
         primary-bg: $primary-bg--dark,
@@ -18,8 +20,8 @@ $themes: (
         secondary-text: $secondary-text--light,
         form-bg: $form-bg--light,
         form-button: $form-button--light,
-        to-top-bg: $to-top-bg--light,
-        to-top-arrow: $to-top-arrow--light,
+        // to-top-bg: $to-top-bg--light,
+        // to-top-arrow: $to-top-arrow--light,,
     ),
     soft: (
         primary-bg: $primary-bg--soft,
@@ -29,8 +31,8 @@ $themes: (
         secondary-text: $secondary-text--soft,
         form-bg: $form-bg--soft,
         form-button: $form-button--soft,
-        to-top-bg: $to-top-bg--soft,
-        to-top-arrow: $to-top-arrow--soft,
+        // to-top-bg: $to-top-bg--soft,
+        // to-top-arrow: $to-top-arrow--soft,,,
     ),
     sharp: (
         primary-bg: $primary-bg--sharp,
@@ -40,7 +42,7 @@ $themes: (
         secondary-text: $secondary-text--sharp,
         form-bg: $form-bg--sharp,
         form-button: $form-button--sharp,
-        to-top-bg: $to-top-bg--sharp,
-        to-top-arrow: $to-top-arrow--sharp,
+        // to-top-bg: $to-top-bg--sharp,
+        // to-top-arrow: $to-top-arrow--sharp,,,
     ),
 );

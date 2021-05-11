@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        {% include 'meta.html' %}
+        {% include '/main/meta.html' %}
         <title>Jacob Andes - Full Stack Developer</title>
         <script
             src="https://kit.fontawesome.com/396432886d.js"
             crossorigin="anonymous"
-        />
-        <script src="https://unpkg.com/axios/dist/axios.min.js" />
+        ></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <link rel="canonical" href="https://jacobandes.dev" />
         <link
             rel="shortcut icon"
-            href="../../images/favicon.ico"
+            href="/../images/favicon.ico"
             type="image/x-icon"
         />
-        <link rel="icon" href="../../images/favicon.ico" type="image/x-icon" />
-        <link rel="stylesheet" href="../../css/main.css" />
+        <link
+            rel="icon"
+            href="../../static/images/favicon.ico"
+            type="image/x-icon"
+        />
+        <link rel="stylesheet" href="../../static/css/main.css" />
     </head>
     <body>
         <header class="header">
             <div class="header--theme">
-                <span class="header--theme--icon"></span>
+                <span class="header--theme--icon"
+                    ><i class="fas fa-cube"></i
+                ></span>
                 <p class="header--theme--text">Light</p>
             </div>
             <div class="header--socials">
@@ -49,17 +55,17 @@
                 <h1 class="me--name">Jacob Andes</h1>
                 <span class="me--rule"></span>
                 <p class="me--job-title">Full Stack Developer</p>
-                <span class="me--arrow"
+                <a class="me--arrow" href="#about"
                     ><i class="fas fa-chevron-down"></i
-                ></span>
+                ></a>
             </section>
             <section id="links" class="links">
                 <a href="#about" class="links--link">About</a>
-                <span class="links__bullet"><i class="fas fa-circle"></i></span>
+                <span class="links--bullet"><i class="fas fa-circle"></i></span>
                 <a href="#skills" class="links--link">Skills</a>
-                <span class="links__bullet"><i class="fas fa-circle"></i></span>
+                <span class="links--bullet"><i class="fas fa-circle"></i></span>
                 <a href="#projects" class="links--link">Projects</a>
-                <span class="links__bullet"><i class="fas fa-circle"></i></span>
+                <span class="links--bullet"><i class="fas fa-circle"></i></span>
                 <a href="#contact" class="links--link">Hire Me!</a>
             </section>
             <section id="about" class="about">
@@ -112,11 +118,11 @@
                 <h2 class="skills--headline">Skill Set</h2>
                 <h3 class="skills--subheadline--current">Currently Using</h3>
                 <div class="skills--current">
-                    {% include 'current-skill-icons.html' %}
+                    {% include '/main/current-skill-icons.html' %}
                 </div>
                 <h3 class="skills--subheadline--learn">Currently Learning</h3>
                 <div class="skills--learning">
-                    {% include 'learning-skill-icons.html' %}
+                    {% include '/main/learning-skill-icons.html' %}
                 </div>
             </section>
             <section id="projects" class="projects">
@@ -232,6 +238,6 @@
                 >
             </p>
         </footer>
-        <script src="../../js/main.js" />
+        <script src="../../static/js/main.js" />
     </body>
 </html>

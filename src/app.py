@@ -2,7 +2,7 @@ import os
 from flask import Flask, render_template, redirect, session, g, jsonify, abort, request
 
 from models import db, connect_db, Feedback, Admin
-from forms import FeedbackForm, LoginForm
+from forms import LoginForm
 
 app = Flask(__name__)
 
@@ -64,8 +64,7 @@ def homepage():
     GET ROUTE:
     - Redirect to construction page
     """
-    form = FeedbackForm()
-    return render_template("index.html", form=form)
+    return render_template("/main/index.html")
 
 
 @app.route("/construction")
@@ -74,7 +73,7 @@ def construction_page():
     GET ROUTE:
     - Construction landing page
     """
-    return render_template("construction.html")
+    return render_template("/construction.html")
 
 
 @app.route("/contact", methods=["POST"])
@@ -89,9 +88,9 @@ def process_feedback():
     """
     data = request.json
 
-    name = data['name']
-    email = data['email']
-    message = data['message']
+    name = data["name"]
+    email = data["email"]
+    message = data["message"]
 
     new_feedback = Feedback(name=name, email=email, message=message)
     db.session.add(new_feedback)
@@ -110,7 +109,7 @@ def process_feedback():
 ################
 
 
-@app.route("/admin/<username>")
+@app.route("/admin")
 def admin_page(username):
     """
     GET ROUTE:
@@ -121,10 +120,10 @@ def admin_page(username):
     # else:
     admin = Admin.query.get_or_404(username)
     feedback = Feedback.query.all()
-    return render_template("admin.html", admin=admin, feedback=feedback)
+    return render_template("/admin/admin.html", admin=admin, feedback=feedback)
 
 
-@app.route("/admin/login", methods=["GET", "POST"])
+@app.route("/login", methods=["GET", "POST"])
 def admin_login():
     """
     GET ROUTE:
@@ -144,14 +143,14 @@ def admin_login():
 
         if admin:
             do_login(admin)
-            return redirect(f"/admin/{admin.username}")
+            return redirect("/admin")
         else:
             form.username.errors = ["Invalid username/password"]
 
     return render_template("/admin/login.html", form=form)
 
 
-@app.route("/admin/logout")
+@app.route("/logout")
 def logout_admin():
     """
     GET ROUTE:
@@ -172,7 +171,7 @@ def return_og_img():
     GET ROUTE:
     - Returns the image for the Open Graph Image Meta
     """
-    return "<img src='../static/images/og_img.png' />"
+    return "<img src='/static/images/og_img.png' />"
 
 
 #######################

@@ -7,6 +7,15 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 /** Media Queries */
 @mixin media-md {
     @media screen and (min-width: 768px) {

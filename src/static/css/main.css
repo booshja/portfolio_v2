@@ -1,0 +1,161 @@
+/** CSS Reset */
+@import url("https://fonts.googleapis.com/css2?family=Amaranth&family=Fira+Mono&family=Jost:wght@400;700&family=Pattaya&family=Poppins:wght@400;700&family=Sen:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/** Media Queries */
+/** Animation Transition */
+.header {
+  background-color: #355464;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 1.5rem;
+  font-family: "Sen", sans-serif;
+}
+
+.header--theme {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #99d9d9;
+}
+
+.header--theme--icon {
+  font-size: 1.5rem;
+}
+
+.header--theme--text {
+  font-size: 0.75rem;
+}
+
+.header--socials {
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+.header--socials a {
+  margin-left: 1.5rem;
+}
+
+.me {
+  background-color: #355464;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30vh 0 8vh 0;
+}
+
+.me--name {
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+}
+
+.me--rule {
+  height: 0.25rem;
+  width: 60vw;
+  border-radius: 2;
+  background-color: #c50020;
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.me--job-title {
+  color: #99d9d9;
+  font-family: "Sen", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.me--arrow {
+  color: #99d9d9;
+  font-size: 2.5rem;
+  margin-top: 15vh;
+}
+
+.links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #68a2b9;
+  height: 7.5vh;
+  font-family: "Sen", sans-serif;
+  font-weight: 700;
+  color: #000000;
+}
+
+.links--bullet {
+  font-size: 0.5rem;
+}
+
+.links--link {
+  font-size: 1.25rem;
+}
+
+.about {
+  background-color: #001628;
+  color: #ffffff;
+  font-family: "Sen", sans-serif;
+  padding: 20vh 0;
+}
+
+.about--hello {
+  font-family: "Poppins", sans-serif;
+}
+
+.skills {
+  background-color: #355464;
+}
+
+.projects {
+  background-color: #001628;
+  color: #ffffff;
+}
+
+.feedback {
+  background-color: #355464;
+}
+
+.footer {
+  background-color: #000000;
+  color: white;
+}
