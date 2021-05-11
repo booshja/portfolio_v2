@@ -1,9 +1,44 @@
-        primary-bg: $primary-bg__dark,
-        secondary-bg: $secondary-bg__dark,
-        tertiary-bg: $tertiary-bg__dark,
-        accent: $accent__dark,
-        secondary-text: $secondary-text__dark,
-        form-bg: $form-bg__dark,
-        form-button: $form-button__dark,
-        to-top-bg: $to-top-bg__dark,
-        to-top-arrow: $to-top-arrow__dark,
+$primary-bg--dark: #355464;
+$primary-bg--light: #99d9b9;
+$primary-bg--soft: #89aee1;
+$primary-bg--sharp: #000000;
+
+$secondary-bg--dark: #001628;
+$secondary-bg--light: #ffffff;
+$secondary-bg--soft: #9effb8;
+$secondary-bg--sharp: #7e4e60;
+
+$tertiary-bg--dark: #68a2b9;
+$tertiary-bg--light: #99b9d9;
+$tertiary-bg--soft: #d46ce7;
+$tertiary-bg--sharp: #ffb81c;
+
+$accent--dark: #e9072b;
+$accent--light: #d99999;
+$accent--soft: #e9f259;
+$accent--sharp: #f4fff8;
+
+$secondary-text--dark: #99d9d9;
+$secondary-text--light: #000000;
+$secondary-text--soft: #e9f259;
+$secondary-text--sharp: #8baaad;
+
+$form-bg--dark: #000000;
+$form-bg--light: #ffffff;
+$form-bg--soft: #f7c9c0;
+$form-bg--sharp: #000000;
+
+$form-button--dark: #68a2b9;
+$form-button--light: #99b9d9;
+$form-button--soft: #99d9d9;
+$form-button--sharp: #f4fff8;
+
+$to-top-bg--dark: #800014;
+// $to-top-bg--light:;
+// $to-top-bg--soft:;
+// $to-top-bg--dark:;
+
+$to-top-arrow--dark: #99d9d9;
+// $to-top-arrow--light:;
+// $to-top-arrow--soft:;
+// $to-top-arrow--sharp:;

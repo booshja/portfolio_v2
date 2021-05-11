@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include 'meta.html' %}
+        <title>Jacob Andes - Full Stack Developer</title>
+        <script
+            src="https://kit.fontawesome.com/396432886d.js"
+            crossorigin="anonymous"
+        />
+        <script src="https://unpkg.com/axios/dist/axios.min.js" />
+        <link rel="canonical" href="https://jacobandes.dev" />
+        <link
+            rel="shortcut icon"
+            href="../../images/favicon.ico"
+            type="image/x-icon"
+        />
+        <link rel="icon" href="../../images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="../../css/main.css" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="header--theme">
+                <span class="header--theme--icon"></span>
+                <p class="header--theme--text">Light</p>
+            </div>
+            <div class="header--socials">
+                <a
+                    href="https://github.com/booshja"
+                    target="_blank"
+                    class="header--socials--link"
+                    ><i class="fab fa-github"></i
+                ></a>
+                <a
+                    href="https://twitter.com/booshja"
+                    target="_blank"
+                    class="header--socials--link"
+                    ><i class="fab fa-twitter"></i
+                ></a>
+                <a
+                    href="https://linked.com/in/jacobandes"
+                    target="_blank"
+                    class="header--socials--link"
+                    ><i class="fab fa-linkedin-in"></i
+                ></a>
+            </div>
+        </header>
+        <main>
+            <section id="me" class="me">
+                <h1 class="me--name">Jacob Andes</h1>
+                <span class="me--rule"></span>
+                <p class="me--job-title">Full Stack Developer</p>
+                <span class="me--arrow"
+                    ><i class="fas fa-chevron-down"></i
+                ></span>
+            </section>
+            <section id="links" class="links">
+                <a href="#about" class="links--link">About</a>
+                <span class="links__bullet"><i class="fas fa-circle"></i></span>
+                <a href="#skills" class="links--link">Skills</a>
+                <span class="links__bullet"><i class="fas fa-circle"></i></span>
+                <a href="#projects" class="links--link">Projects</a>
+                <span class="links__bullet"><i class="fas fa-circle"></i></span>
+                <a href="#contact" class="links--link">Hire Me!</a>
+            </section>
+            <section id="about" class="about">
+                <h3 class="about--hello">Hello!</h3>
+                <h3 class="about--name">I'm Jacob,</h3>
+                <p class="about--bio1">
+                    I'm a Full Stack Developer from Seattle, WA. I love finding
+                    creative solutions to complex problems and creating
+                    beautiful, relaiable, responsive web applications.
+                </p>
+                <p class="about--bio2">
+                    When I'm not coding, you can find me spending time with my
+                    girlfriend and dogs, watching hockey, or clumsily learning
+                    how to skate and play hockey.
+                </p>
+            </section>
+            <section id="cards" class="cards">
+                <div class="cards--card">
+                    <span class="cards--card--bulb"
+                        ><i class="far fa-lightbulb"></i
+                    ></span>
+                    <h4 class="cards--card--headline">Current</h4>
+                    <p class="cards--card--desc">
+                        I work with current tech, and enjoy learning more about
+                        rising frameworks and technologies.
+                    </p>
+                </div>
+                <div class="cards--card">
+                    <span class="cards--card--phone"
+                        ><i class="fas fa-mobile-alt"></i
+                    ></span>
+                    <h4 class="cards--card--headline">Responsive</h4>
+                    <p class="cards--card--desc">
+                        I create applications that seamlessly transition between
+                        all devices and screen sizes.
+                    </p>
+                </div>
+                <div class="cards--card">
+                    <span class="cards--card--code"
+                        ><i class="fas fa-code"></i
+                    ></span>
+                    <h4 class="cards--card--headline">Concise</h4>
+                    <p class="cards--card--desc">
+                        In both code and communication - clarity, purpose, and
+                        focus are key.
+                    </p>
+                </div>
+            </section>
+            <section id="skills" class="skills">
+                <h2 class="skills--headline">Skill Set</h2>
+                <h3 class="skills--subheadline--current">Currently Using</h3>
+                <div class="skills--current">
+                    {% include 'current-skill-icons.html' %}
+                </div>
+                <h3 class="skills--subheadline--learn">Currently Learning</h3>
+                <div class="skills--learning">
+                    {% include 'learning-skill-icons.html' %}
+                </div>
+            </section>
+            <section id="projects" class="projects">
+                <h2 class="projects--headline">Projects</h2>
+                <article class="projects--project">
+                    <div class="projects--project--text">
+                        <h3 class="projects--project--text--name">
+                            SetPlaylist
+                        </h3>
+                        <p class="projects--project--text--desc">
+                            Save your favorite concerts as a playlist to your
+                            Spotify account.
+                            <br />
+                            Built as my first Capstone in Springboard’s Software
+                            Engineering Program.
+                        </p>
+                    </div>
+                    <div class="projects--project--image">
+                        <img src="#" alt="SetPlaylist Webpage Screenshot" />
+                    </div>
+                </article>
+            </section>
+            <section id="contact" class="feedback">
+                <div class="contact">
+                    <h2 class="contact--headline">Contact Me</h2>
+                    <span class="contact--rule"></span>
+                    <p class="contact--subheadline">
+                        Have a question or want to work together?
+                    </p>
+                    <form
+                        action="/contact"
+                        method="POST"
+                        class="contact--form"
+                        id="contact-form"
+                    >
+                        <input
+                            type="text"
+                            class="contact--form--name"
+                            id="name"
+                            name="name"
+                            placeholder="Name"
+                        />
+                        <input
+                            type="text"
+                            class="contact--form--email"
+                            id="email"
+                            name="email"
+                            placeholder="Email"
+                        />
+                        <textarea
+                            class="contact--form--message"
+                            name="message"
+                            id="message"
+                            placeholder="Message"
+                            cols="30"
+                            rows="10"
+                        ></textarea>
+                        <button
+                            type="submit"
+                            class="contact--form--submit"
+                            id="contact-form-btn"
+                        >
+                            Submit
+                        </button>
+                    </form>
+                </div>
+                <div id="reply-true" class="reply-true">
+                    <p class="reply-true--text">
+                        Thank you, I've received your message and will be in
+                        contact soon!
+                    </p>
+                    <button id="reply-true-btn" class="reply-true--btn">
+                        Send another message
+                    </button>
+                </div>
+                <div id="reply-false" class="reply-false">
+                    <p class="reply-false--text">
+                        Unfortunately your message didn't go through...
+                    </p>
+                    <button class="reply-false--btn" id="reply-false-btn">
+                        Try again
+                    </button>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer--socials">
+                <a
+                    href="https://github.com/booshja"
+                    target="_blank"
+                    class="footer--socials--link"
+                    ><i class="fab fa-github"></i
+                ></a>
+                <a
+                    href="https://twitter.com/booshja"
+                    target="_blank"
+                    class="footer--socials--link"
+                    ><i class="fab fa-twitter"></i
+                ></a>
+                <a
+                    href="https://linked.com/in/jacobandes"
+                    target="_blank"
+                    class="footer--socials--link"
+                    ><i class="fab fa-linkedin-in"></i
+                ></a>
+            </div>
+            <p class="footer--copyright">
+                &#169; 2021 - Designed and Developed by
+                <a
+                    href="mailto:jacob.andes@gmail.com"
+                    class="footer--copyright--link"
+                    >Jacob Andes</a
+                >
+            </p>
+        </footer>
+        <script src="../../js/main.js" />
+    </body>
+</html>

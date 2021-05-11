@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, session, g, jsonify, abort
+from flask import Flask, render_template, redirect, session, g, jsonify, abort, request
 
 from models import db, connect_db, Feedback, Admin
 from forms import FeedbackForm, LoginForm
@@ -87,24 +87,22 @@ def process_feedback():
     -Log info into database
     -Redirect to '/feedback/thanks'
     """
-    form = FeedbackForm()
+    data = request.json
 
-    if form.validate.on_submit():
-        name = form.name.data
-        email = form.email.data
-        message = form.message.data
-        new_feedback = Feedback(name=name, email=email, message=message)
-        db.session.add(new_feedback)
-        try:
-            db.session.commit()
-        except:
-            db.session.rollback()
-            return jsonify({"error": "Error saving to database."})
+    name = data['name']
+    email = data['email']
+    message = data['message']
 
-        resp = {"status": "accepted"}
-        return jsonify(resp)
+    new_feedback = Feedback(name=name, email=email, message=message)
+    db.session.add(new_feedback)
+    try:
+        db.session.commit()
+    except:
+        db.session.rollback()
+        return jsonify({"error": "Error saving to database."})
 
-    abort(403)
+    resp = {"status": "accepted"}
+    return jsonify(resp)
 
 
 ################
