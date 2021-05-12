@@ -7,7 +7,7 @@ from forms import LoginForm
 app = Flask(__name__)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get(
-    "DATABASE_URL", "postgresql:///portfolio_test"
+    "DATABASE_URL", "postgresql:///portfolio"
 )
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "secretkey")
@@ -160,9 +160,9 @@ def logout_admin():
     return redirect("/")
 
 
-##########################
-# Open Graph Image Route #####################################
-##########################
+#####################################
+# Open Graph & Favicon Image Routes ###
+#####################################
 
 
 @app.route("/ogimg/ogimg.png")

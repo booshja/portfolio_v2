@@ -1,6 +1,6 @@
 import Feedback from "./models";
 
-const contactForm = document.querySelector("#contact-form");
+const contactForm = document.querySelector("#contact-form-btn");
 const nameField = document.querySelector("#name");
 const emailField = document.querySelector("#email");
 const messageField = document.querySelector("#message");
@@ -8,7 +8,7 @@ const messageField = document.querySelector("#message");
 const resetFormBtnTrue = document.querySelector("#reply-true-btn");
 const resetFormBtnFalse = document.querySelector("#reply-false-btn");
 
-async function handleForm() {
+contactForm.addEventListener("click", async () => {
     const name = nameField.value;
     const email = emailField.value;
     const message = messageField.value;
@@ -17,7 +17,7 @@ async function handleForm() {
     //     feedbackReply(false);
     //     return;
     // }
-
+    console.log("name " + name + " email " + email + " message " + message);
     const res = await contactForm(name, email, message);
 
     if (res) {
@@ -25,7 +25,7 @@ async function handleForm() {
     } else {
         feedbackReply(false);
     }
-}
+});
 
 resetFormBtnTrue.addEventListener("click", () => {
     resetFeedback();
