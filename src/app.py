@@ -88,17 +88,17 @@ def process_feedback():
     """
     data = request.json
 
-    name = data["name"]
-    email = data["email"]
-    message = data["message"]
+    # name = data["name"]
+    # email = data["email"]
+    # message = data["message"]
 
-    new_feedback = Feedback(name=name, email=email, message=message)
-    db.session.add(new_feedback)
-    try:
-        db.session.commit()
-    except:
-        db.session.rollback()
-        return jsonify({"error": "Error saving to database."})
+    # new_feedback = Feedback(name=name, email=email, message=message)
+    # db.session.add(new_feedback)
+    # try:
+    #     db.session.commit()
+    # except:
+    #     db.session.rollback()
+    #     return jsonify({"error": "Error saving to database."})
 
     resp = {"status": "accepted"}
     return jsonify(resp)
