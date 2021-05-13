@@ -25,12 +25,13 @@ class Feedback(db.Model):
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.Text, nullable=False)
-    email = db.Column(db.Text, nullable=False)
+    email = db.Column(db.Text)
     message = db.Column(db.Text, nullable=False)
 
     def __repr__(self):
         """A better readable representation of the instance"""
-        return f"<Feedback id={self.id} email={self.email} title={self.title} content={self.content}>"
+        return f"<Feedback id={self.id} email={self.email} \
+            title={self.title} content={self.content}>"
 
 
 class Admin(db.Model):
@@ -45,6 +46,23 @@ class Admin(db.Model):
     password = db.Column(db.Text, nullable=False)
 
     @classmethod
+    def register(cls, username, pwd):
+        """
+        - Sign up admin
+        - Hash password & secret question
+        - Add admin to database
+        """
+        hashed_pwd = bcrypt.generate_password_hash(pwd)
+
+        admin = cls(
+            username=username,
+            password=hashed_pwd,
+        )
+        db.session.add(admin)
+
+        return admin
+
+    @classmethod
     def authenticate(cls, username, pwd):
         """
         Validate that admin exists and password is correct.
@@ -52,6 +70,8 @@ class Admin(db.Model):
         """
 
         u = Admin.query.filter_by(username=username).first()
+        print("UUUUUUU ====> " + str(u))
+        print("UUUU...PASSWORD ======> " + pwd)
 
         if u and bcrypt.check_password_hash(u.password, pwd):
             return u
@@ -63,5 +83,5 @@ class Admin(db.Model):
         """
         Hashes password and returns it
         """
-        hashed = bcrypt.generate_password_hash(raw_pwd)
-        return hashed.decode("utf8")
+        hashed = bcrypt.generate_password_hash(raw_pwd).decode("utf8")
+        return hashed

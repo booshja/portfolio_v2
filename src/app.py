@@ -1,8 +1,9 @@
 import os
-from flask import Flask, render_template, redirect, session, g, jsonify, abort, request
+from flask import Flask, render_template, redirect, session, g, abort
+from flask_mail import Mail, Message
 
 from models import db, connect_db, Feedback, Admin
-from forms import LoginForm
+from forms import LoginForm, ContactForm, RegisterForm
 
 app = Flask(__name__)
 
@@ -11,10 +12,18 @@ app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get(
 )
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "secretkey")
+app.config["MAIL_SERVER"] = "smtp.googlemail.com"
+app.config["MAIL_PORT"] = 587
+app.config["MAIL_USE_TLS"] = True
+app.config["MAIL_USERNAME"] = os.environ.get("EMAIL")
+app.config["MAIL_PASSWORD"] = os.environ.get("EMAIL_PWD")
+app.config["MAIL_DEFAULT_SENDER"] = os.environ.get("EMAIL")
 
 CURR_USER_KEY = os.environ.get("CURR_USER_KEY")
 
 connect_db(app)
+
+mail = Mail(app)
 
 
 ##################
@@ -64,7 +73,8 @@ def homepage():
     GET ROUTE:
     - Redirect to construction page
     """
-    return render_template("/main/index.html")
+    form = ContactForm()
+    return render_template("/main/index.html", form=form)
 
 
 @app.route("/construction")
@@ -86,22 +96,37 @@ def process_feedback():
     -Log info into database
     -Redirect to '/feedback/thanks'
     """
-    data = request.json
+    form = ContactForm()
 
-    # name = data["name"]
-    # email = data["email"]
-    # message = data["message"]
+    if form.validate_on_submit():
+        name = form.name.data
+        email = form.email.data
+        message = form.message.data
 
-    # new_feedback = Feedback(name=name, email=email, message=message)
-    # db.session.add(new_feedback)
-    # try:
-    #     db.session.commit()
-    # except:
-    #     db.session.rollback()
-    #     return jsonify({"error": "Error saving to database."})
+        feedback = Feedback(name=name, email=email, message=message)
+        try:
+            db.session.add(feedback)
+            db.session.commit()
 
-    resp = {"status": "accepted"}
-    return jsonify(resp)
+            msg = Message("New Feedback", recipients=[os.environ.get("EMAIL_TO")])
+            msg.html = render_template(
+                "/mail/feedback.html", name=name, email=email, message=message
+            )
+            mail.send(msg)
+            return redirect("/thanks")
+        except:
+            form.name.errors = ["Unable to save message"]
+
+    return render_template("/main/index.html", form=form)
+
+
+@app.route("/thanks")
+def show_thanks():
+    """
+    GET ROUTE:
+    -Display feedback accepted message
+    """
+    return render_template("/main/thanks.html")
 
 
 ################
@@ -110,20 +135,46 @@ def process_feedback():
 
 
 @app.route("/admin")
-def admin_page(username):
+def admin_page():
     """
     GET ROUTE:
     -Show feedback and logout link
     """
-    # if not g.user:
-    #     abort(403)
-    # else:
-    admin = Admin.query.get_or_404(username)
-    feedback = Feedback.query.all()
-    return render_template("/admin/admin.html", admin=admin, feedback=feedback)
+    if not g.user:
+        abort(403)
+    else:
+        feedback = Feedback.query.all()
+        return render_template("/admin/admin.html", feedback=feedback)
 
 
-@app.route("/login", methods=["GET", "POST"])
+@app.route("/admin/reg", methods=["GET", "POST"])
+def admin_registration():
+    """
+    GET ROUTE:
+    -Display admin register form
+    """
+    form = RegisterForm()
+
+    if form.validate_on_submit():
+        username = form.username.data
+        password = form.password.data
+        secret = form.secret.data
+
+        if secret != os.environ.get("SECRET"):
+            abort(403)
+
+        # try:
+        admin = Admin.register(username=username, pwd=password)
+
+        db.session.commit()
+        # except:
+        #     form.username.errors = ["Unable to add admin"]
+        return redirect("/admin/login")
+
+    return render_template("/admin/register.html", form=form)
+
+
+@app.route("/admin/login", methods=["GET", "POST"])
 def admin_login():
     """
     GET ROUTE:

@@ -68,11 +68,9 @@
                 <span class="links--bullet"><i class="fas fa-circle"></i></span>
                 <a href="#contact" class="links--link">Hire Me!</a>
             </section>
-            <section id="about" class="about">
-                <div class="about--greeting">
-                    <h3 class="about--hello">Hello!</h3>
-                    <h3 class="about--name">I'm Jacob,</h3>
-                </div>
+            <section class="about">
+                <h3 class="about--hello" id="about">Hello!</h3>
+                <h3 class="about--name">I'm Jacob,</h3>
                 <p class="about--bio1">
                     I'm a Full Stack Developer from Seattle, WA. I love finding
                     creative solutions to complex problems and creating
@@ -132,9 +130,11 @@
             <section class="projects">
                 <h2 id="projects" class="projects--headline">Projects</h2>
                 <article class="projects--project">
-                    <div class="projects--project--image">
-                        <img src="#" alt="SetPlaylist Webpage Screenshot" />
-                    </div>
+                    <img
+                        src="../../static/images/setplaylist.png"
+                        alt="SetPlaylist Webpage Screenshot"
+                        class="projects--project--image"
+                    />
                     <div class="projects--project--text">
                         <h3 class="projects--project--text--name">
                             SetPlaylist
@@ -159,54 +159,27 @@
                     <p class="contact--subheadline">
                         Have a question or want to work together?
                     </p>
-                    <form class="contact--form" id="contact-form">
-                        <input
-                            type="text"
-                            class="contact--form--input"
-                            id="name"
-                            name="name"
-                            placeholder="Name"
-                        />
-                        <input
-                            type="text"
-                            class="contact--form--input"
-                            id="email"
-                            name="email"
-                            placeholder="Email"
-                        />
-                        <textarea
-                            class="contact--form--input"
-                            name="message"
-                            id="message"
-                            placeholder="Message"
-                            cols="30"
-                            rows="10"
-                        ></textarea>
+                    <form
+                        action="/contact"
+                        method="post"
+                        class="contact--form"
+                        id="contact-form"
+                    >
+                        {{form.hidden_tag()}}
+                        {{form.name(class_="contact--form--input",
+                        placeholder="Name")}}
+                        {{form.email(class_="contact--form--input",
+                        placeholder="Email - Optional")}}
+                        {{form.message(class_="contact--form--input",
+                        placeholder="Message")}}
                         <button
+                            type="submit"
                             class="contact--form--submit"
                             id="contact-form-btn"
-                            type="button"
                         >
                             Submit
                         </button>
                     </form>
-                </div>
-                <div id="reply-true" class="reply-true">
-                    <p class="reply-true--text">
-                        Thank you, I've received your message and will be in
-                        contact soon!
-                    </p>
-                    <button id="reply-true-btn" class="reply-true--btn">
-                        Send another message
-                    </button>
-                </div>
-                <div id="reply-false" class="reply-false">
-                    <p class="reply-false--text">
-                        Unfortunately your message didn't go through...
-                    </p>
-                    <button class="reply-false--btn" id="reply-false-btn">
-                        Try again
-                    </button>
                 </div>
             </section>
         </main>
@@ -240,6 +213,5 @@
                 >
             </p>
         </footer>
-        <script src="../../static/js/main.js" />
     </body>
 </html>

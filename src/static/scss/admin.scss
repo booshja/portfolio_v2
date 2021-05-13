@@ -1,0 +1,101 @@
+@import "config", "colors", "fonts", "responsive";
+
+body {
+    background-color: $black;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    color: $white;
+
+    &--headline {
+        font-family: $primary-font--dark;
+        text-align: center;
+        margin: 2rem 0 1rem;
+        font-size: 2rem;
+    }
+
+    &--error {
+        color: $accent--dark;
+        font-family: $primary-font--dark;
+        text-align: center;
+        margin: 1rem 0;
+    }
+
+    &--form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &--input {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            background-color: $black;
+            color: $white;
+            border: 1px solid $white;
+            border-radius: 3px;
+            padding: 3px;
+        }
+
+        &--buttons {
+            display: flex;
+            margin: 0.5rem 3rem 0 0;
+            align-self: flex-end;
+            font-family: $secondary-font--dark;
+            align-items: center;
+
+            &--cancel {
+                margin-right: 1rem;
+            }
+
+            &--submit {
+                padding: 2.5px 5px;
+                background-color: $black;
+                border: 1px solid $white;
+                border-radius: 3px;
+                color: $white;
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+
+    &--name {
+        color: $white;
+        font-family: $primary-font--dark;
+    }
+
+    &--logout {
+        color: $white;
+        border: none;
+        background-color: black;
+        font-family: $secondary-font--dark;
+    }
+}
+
+.admin-title {
+    font-family: $primary-font--dark;
+    color: $white;
+    font-size: 2rem;
+    margin: 0 0 1rem 2rem;
+}
+
+.feedback {
+    color: $white;
+    width: 80%;
+    margin-left: 10%;
+
+    &--text {
+        font-family: $primary-font--dark;
+
+        a {
+            font-family: $secondary-font--dark;
+        }
+    }
+}

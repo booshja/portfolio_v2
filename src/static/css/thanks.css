@@ -1,0 +1,65 @@
+/** CSS Reset */
+@import url("https://fonts.googleapis.com/css2?family=Amaranth&family=Fira+Mono&family=Jost:wght@400;700&family=Pattaya&family=Poppins:wght@400;700&family=Sen:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/** Media Queries */
+/** Animation Transition */
+@media screen and (min-width: 414px) {
+  .links--link {
+    font-size: 1.2rem;
+  }
+  .links--bullet {
+    font-size: 0.5rem;
+  }
+}
+
+body {
+  background-color: #001628;
+}
+
+.thanks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2rem 1rem;
+  color: #ffffff;
+}
+
+.thanks--headline {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.thanks--text {
+  font-family: "Sen", sans-serif;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.thanks--link {
+  font-family: #001628;
+  color: #99d9d9;
+  margin-left: 1rem;
+}

@@ -1,1 +1,151 @@
-/* No CSS */
+/** CSS Reset */
+@import url("https://fonts.googleapis.com/css2?family=Amaranth&family=Fira+Mono&family=Jost:wght@400;700&family=Pattaya&family=Poppins:wght@400;700&family=Sen:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/** Media Queries */
+/** Animation Transition */
+@media screen and (min-width: 414px) {
+  .links--link {
+    font-size: 1.2rem;
+  }
+  .links--bullet {
+    font-size: 0.5rem;
+  }
+}
+
+body {
+  background-color: #000000;
+}
+
+.login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #ffffff;
+}
+
+.login--headline {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  margin: 2rem 0 1rem;
+  font-size: 2rem;
+}
+
+.login--error {
+  color: #c50020;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.login--form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login--form--input {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+.login--form--buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0.5rem 3rem 0 0;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  font-family: "Sen", sans-serif;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login--form--buttons--cancel {
+  margin-right: 1rem;
+}
+
+.login--form--buttons--submit {
+  padding: 2.5px 5px;
+  background-color: #000000;
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.admin-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 1.5rem;
+}
+
+.admin-header--name {
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+.admin-header--logout {
+  color: #ffffff;
+  border: none;
+  background-color: black;
+  font-family: "Sen", sans-serif;
+}
+
+.admin-title {
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  font-size: 2rem;
+  margin: 0 0 1rem 2rem;
+}
+
+.feedback {
+  color: #ffffff;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.feedback--text {
+  font-family: "Poppins", sans-serif;
+}
+
+.feedback--text a {
+  font-family: "Sen", sans-serif;
+}

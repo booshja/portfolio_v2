@@ -21,7 +21,7 @@
     <body>
         <main>
             <section id="login" class="login">
-                <h1 class="login--headline">Admin Login</h1>
+                <h1 class="login--headline">Admin Registration</h1>
                 {% if form.errors.items() %}
                 <ul>
                     {% for field, errors in form.errors.items() %} {% for error
@@ -30,7 +30,7 @@
                     {% endfor %} {% endfor %}
                 </ul>
                 {% endif %}
-                <form method="post" action="/admin/login" class="login--form">
+                <form method="post" action="/admin/reg" class="login--form">
                     {{form.hidden_tag()}} {% for field in form if
                     field.widget.input_type != 'hidden' %}
                     {{field(class_="login--form--input",

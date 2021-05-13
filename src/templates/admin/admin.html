@@ -5,13 +5,24 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="robots" content="noindex" />
-        <link rel="stylesheet" href="../../css/admin.css" />
+        <link
+            rel="shortcut icon"
+            href="../../static/images/favicon.ico"
+            type="image/x-icon"
+        />
+        <link
+            rel="icon"
+            href="../../static/images/favicon.ico"
+            type="image/x-icon"
+        />
+        <link rel="stylesheet" href="../../static/css/admin.css" />
         <title>Welcome Back!</title>
     </head>
     <body>
         <header id="admin-tools" class="admin-header">
+            <p class="admin-header--name">ADMIN</p>
             <form action="/admin/logout" method="post">
-                <button type="submit" class="admin-header__logout">
+                <button type="submit" class="admin-header--logout">
                     Logout
                 </button>
             </form>
@@ -19,28 +30,28 @@
         <main>
             <h1 class="admin-title">Hello!</h1>
             <section id="feedback" class="feedback">
-                <h2 class="feedback__headline">Your Feedbacks:</h2>
+                <h2 class="feedback--headline">Your Feedbacks:</h2>
                 {% if feedback %}
-                <table class="feedback__table">
+                <table class="feedback--table">
                     <thead>
-                        <tr class="feedback__table__head">
-                            <th class="feedback__table__head__item">Name</th>
-                            <th class="feedback__table__head__item">Email</th>
-                            <th class="feedback__table__head__item">Message</th>
+                        <tr class="feedback--table--head">
+                            <th class="feedback--table--head--item">Name</th>
+                            <th class="feedback--table--head--item">Email</th>
+                            <th class="feedback--table--head--item">Message</th>
                         </tr>
                     </thead>
-                    <tbody class="feedback_table__body">
+                    <tbody class="feedback_table--body">
                         {% for feed in feedback %}
-                        <tr class="feedback_table__body__row">
-                            <td class="feedback_table__body__item">
+                        <tr class="feedback_table--body--row">
+                            <td class="feedback_table--body--item">
                                 {{feed.name}}
                             </td>
-                            <td class="feedback_table__body__item">
+                            <td class="feedback_table--body--item">
                                 <a href="mailto:{{feed.email}}" target="_blank"
                                     >{{feed.email}}</a
                                 >
                             </td>
-                            <td class="feedback_table__body__item">
+                            <td class="feedback_table--body--item">
                                 {{feed.message}}
                             </td>
                         </tr>
@@ -48,7 +59,7 @@
                     </tbody>
                 </table>
                 {% else %}
-                <p>
+                <p class="feedback--text">
                     Nothing yet...
                     <a href="https://www.linkedin.com" target="_blank"
                         >GO HUSTLE</a

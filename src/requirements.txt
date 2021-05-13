@@ -1,6 +1,7 @@
 autopep8==1.5.5
 backcall==0.2.0
 bcrypt==3.2.0
+blinker==1.4
 cffi==1.14.5
 click==7.1.2
 colorama==0.4.4
@@ -9,6 +10,7 @@ dnspython==2.1.0
 email-validator==1.1.2
 Flask==1.1.2
 Flask-Bcrypt==0.7.1
+Flask-Mail==0.9.1
 Flask-SQLAlchemy==2.4.4
 Flask-WTF==0.14.3
 greenlet==1.0.0
@@ -26,6 +28,7 @@ pickleshare==0.7.5
 prompt-toolkit==3.0.16
 psycopg2-binary==2.8.6
 ptyprocess==0.7.0
+py-bcrypt==0.4
 pycodestyle==2.6.0
 pycparser==2.20
 Pygments==2.8.0

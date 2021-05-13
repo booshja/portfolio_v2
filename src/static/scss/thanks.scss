@@ -1,0 +1,31 @@
+@import "config", "colors", "fonts", "responsive";
+
+body {
+    background-color: $secondary-bg--dark;
+}
+
+.thanks {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    color: $white;
+
+    &--headline {
+        font-family: $primary-font--dark;
+        text-align: center;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+
+    &--text {
+        font-family: $secondary-font--dark;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    &--link {
+        font-family: $secondary-bg--dark;
+        color: $secondary-text--dark;
+        margin-left: 1rem;
+    }
+}
