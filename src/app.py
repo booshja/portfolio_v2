@@ -1,6 +1,5 @@
 import os
 from flask import Flask, render_template, redirect, session, g, abort
-from flask_migrate import Migrate
 from flask_mail import Mail, Message
 
 from models import db, connect_db, Feedback, Admin
@@ -23,8 +22,6 @@ app.config["MAIL_DEFAULT_SENDER"] = os.environ.get("EMAIL")
 CURR_USER_KEY = os.environ.get("CURR_USER_KEY")
 
 connect_db(app)
-
-migrate = Migrate(app, db)
 
 mail = Mail(app)
 
