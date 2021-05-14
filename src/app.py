@@ -31,19 +31,19 @@ mail = Mail(app)
 ##################
 
 
-def do_login(admin):
-    """
-    Log in Admin
-    """
-    session[CURR_USER_KEY] = admin.username
+# def do_login(admin):
+#     """
+#     Log in Admin
+#     """
+#     session[CURR_USER_KEY] = admin.username
 
 
-def do_logout():
-    """
-    Logout Admin
-    """
-    if "user_id" in session:
-        del session[CURR_USER_KEY]
+# def do_logout():
+#     """
+#     Logout Admin
+#     """
+#     if "user_id" in session:
+#         del session[CURR_USER_KEY]
 
 
 ###################
@@ -51,15 +51,15 @@ def do_logout():
 ###################
 
 
-@app.before_request
-def add_admin_to_g():
-    """
-    If we're logged in, add curr user to Flask global.
-    """
-    if CURR_USER_KEY in session:
-        g.user = Admin.query.get(session["user_id"])
-    else:
-        g.user = None
+# @app.before_request
+# def add_admin_to_g():
+#     """
+#     If we're logged in, add curr user to Flask global.
+#     """
+#     if CURR_USER_KEY in session:
+#         g.user = Admin.query.get(session["user_id"])
+#     else:
+#         g.user = None
 
 
 ####################
@@ -134,81 +134,81 @@ def show_thanks():
 ################
 
 
-@app.route("/admin")
-def admin_page():
-    """
-    GET ROUTE:
-    -Show feedback and logout link
-    """
-    if not g.user:
-        abort(403)
-    else:
-        feedback = Feedback.query.all()
-        return render_template("/admin/admin.html", feedback=feedback)
+# @app.route("/admin")
+# def admin_page():
+#     """
+#     GET ROUTE:
+#     -Show feedback and logout link
+#     """
+#     if not g.user:
+#         abort(403)
+#     else:
+#         feedback = Feedback.query.all()
+#         return render_template("/admin/admin.html", feedback=feedback)
 
 
-@app.route("/admin/reg", methods=["GET", "POST"])
-def admin_registration():
-    """
-    GET ROUTE:
-    -Display admin register form
-    """
-    form = RegisterForm()
+# @app.route("/admin/reg", methods=["GET", "POST"])
+# def admin_registration():
+#     """
+#     GET ROUTE:
+#     -Display admin register form
+#     """
+#     form = RegisterForm()
 
-    if form.validate_on_submit():
-        username = form.username.data
-        password = form.password.data
-        secret = form.secret.data
+#     if form.validate_on_submit():
+#         username = form.username.data
+#         password = form.password.data
+#         secret = form.secret.data
 
-        if secret != os.environ.get("SECRET"):
-            abort(403)
+#         if secret != os.environ.get("SECRET"):
+#             abort(403)
 
-        # try:
-        admin = Admin.register(username=username, pwd=password)
+#         # try:
+#         admin = Admin.register(username=username, pwd=password)
 
-        db.session.commit()
-        # except:
-        #     form.username.errors = ["Unable to add admin"]
-        return redirect("/admin/login")
+#         db.session.commit()
+#         # except:
+#         #     form.username.errors = ["Unable to add admin"]
+#         return redirect("/admin/login")
 
-    return render_template("/admin/register.html", form=form)
-
-
-@app.route("/admin/login", methods=["GET", "POST"])
-def admin_login():
-    """
-    GET ROUTE:
-    -Show login form
-    --------------------
-    POST ROUTE:
-    -Authenticate login
-    -Redirect to '/admin'
-    """
-    form = LoginForm()
-
-    if form.validate_on_submit():
-        username = form.username.data
-        password = form.password.data
-
-        admin = Admin.authenticate(username, password)
-
-        if admin:
-            do_login(admin)
-            return redirect("/admin")
-        else:
-            form.username.errors = ["Invalid username/password"]
-
-    return render_template("/admin/login.html", form=form)
+#     return render_template("/admin/register.html", form=form)
 
 
-@app.route("/logout")
-def logout_admin():
-    """
-    GET ROUTE:
-    - Log the user out
-    """
-    do_logout()
-    return redirect("/")
+# @app.route("/admin/login", methods=["GET", "POST"])
+# def admin_login():
+#     """
+#     GET ROUTE:
+#     -Show login form
+#     --------------------
+#     POST ROUTE:
+#     -Authenticate login
+#     -Redirect to '/admin'
+#     """
+#     form = LoginForm()
+
+#     if form.validate_on_submit():
+#         username = form.username.data
+#         password = form.password.data
+
+#         admin = Admin.authenticate(username, password)
+
+#         if admin:
+#             do_login(admin)
+#             return redirect("/admin")
+#         else:
+#             form.username.errors = ["Invalid username/password"]
+
+#     return render_template("/admin/login.html", form=form)
+
+
+# @app.route("/logout")
+# def logout_admin():
+#     """
+#     GET ROUTE:
+#     - Log the user out
+#     """
+#     do_logout()
+#     return redirect("/")
 
 
 #####################################

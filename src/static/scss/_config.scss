@@ -1,3 +1,4 @@
+@import "colors";
 /** CSS Reset */
 * {
     margin: 0;
@@ -5,6 +6,10 @@
     border: 0;
     font-size: 100%;
     box-sizing: border-box;
+}
+
+body {
+    background-color: $primary-bg--dark;
 }
 
 html {
@@ -36,7 +41,7 @@ a {
 }
 
 @mixin media-xl {
-    @media screen and (min-width: 1600px) {
+    @media screen and (min-width: 1366px) {
         @content;
     }
 }

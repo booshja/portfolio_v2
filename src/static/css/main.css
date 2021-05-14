@@ -9,6 +9,10 @@
           box-sizing: border-box;
 }
 
+body {
+  background-color: #355464;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -20,15 +24,6 @@ a {
 
 /** Media Queries */
 /** Animation Transition */
-@media screen and (min-width: 414px) {
-  .links--link {
-    font-size: 1.2rem;
-  }
-  .links--bullet {
-    font-size: 0.5rem;
-  }
-}
-
 .header {
   background-color: #355464;
   display: -webkit-box;
@@ -43,22 +38,6 @@ a {
 
 .header--theme {
   display: none;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #99d9d9;
-}
-
-.header--theme--icon {
-  font-size: 1.5rem;
-}
-
-.header--theme--text {
-  font-size: 0.75rem;
 }
 
 .header--socials {
@@ -95,7 +74,7 @@ a {
 .me--rule {
   height: 0.25rem;
   width: 60%;
-  border-radius: 2;
+  border-radius: 1px;
   background-color: #c50020;
   margin-top: 0.75rem;
   margin-bottom: 1rem;
@@ -183,6 +162,15 @@ a {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#001628), color-stop(50%, #001628), color-stop(50%, #355464), color-stop(50%, #355464));
   background-image: linear-gradient(#001628 0%, #001628 50%, #355464 50%, #355464 50%);
   height: 110%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .cards {
@@ -197,7 +185,6 @@ a {
   padding: 1rem;
   width: 90%;
   border-radius: 6px;
-  margin-left: 5%;
   color: #ffffff;
 }
 
@@ -311,6 +298,16 @@ a {
   background-color: #001628;
   color: #ffffff;
   padding: 20% 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .projects--headline {
@@ -444,14 +441,6 @@ a {
   resize: none;
 }
 
-.reply-true {
-  display: none;
-}
-
-.reply-false {
-  display: none;
-}
-
 .footer {
   background-color: #000000;
   color: white;
@@ -482,4 +471,458 @@ a {
   font-family: "Sen", sans-serif;
   font-size: 0.7rem;
   text-align: center;
+}
+
+/** CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #355464;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/** Media Queries */
+/** Animation Transition */
+@media screen and (min-width: 414px) {
+  .me {
+    padding: 40% 0 10% 0;
+  }
+  .me--name {
+    font-size: 2.8rem;
+  }
+  .me--job-title {
+    font-size: 1.4rem;
+  }
+  .me--arrow {
+    font-size: 2.7rem;
+    margin-top: 8rem;
+  }
+  .links--link {
+    font-size: 1.2rem;
+  }
+  .links--bullet {
+    font-size: 0.4rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 2rem 3rem;
+  }
+  .header--socials {
+    font-size: 3rem;
+  }
+  .me {
+    padding: 25% 0 10% 0;
+  }
+  .me--name {
+    font-size: 5rem;
+  }
+  .me--job-title {
+    font-size: 2.5rem;
+  }
+  .me--arrow {
+    font-size: 3rem;
+  }
+  .links--link {
+    font-size: 2rem;
+  }
+  .links--bullet {
+    font-size: 0.7rem;
+  }
+  .about {
+    padding: 20% 10%;
+  }
+  .about--hello {
+    font-size: 4rem;
+  }
+  .about--name {
+    font-size: 3.6rem;
+  }
+  .about p {
+    font-size: 1.7rem;
+  }
+  .cards {
+    width: 75%;
+  }
+  .cards--card span {
+    font-size: 8rem;
+  }
+  .cards--card--headline {
+    font-size: 3rem;
+  }
+  .cards--card--desc {
+    font-size: 1.8rem;
+  }
+  .skills--headline {
+    font-size: 4.5rem;
+  }
+  .skills--subheadline {
+    font-size: 3.5rem;
+  }
+  .skills--list--skill--logo {
+    font-size: 8rem;
+  }
+  .skills--list--skill--name {
+    font-size: 2rem;
+  }
+  .projects--headline {
+    font-size: 4rem;
+  }
+  .projects--project {
+    width: 90%;
+  }
+  .projects--project--text--name {
+    font-size: 3rem;
+  }
+  .projects--project--text--desc {
+    font-size: 1.5rem;
+  }
+  .projects--project--text a {
+    font-size: 2.2rem;
+  }
+  .contact--headline {
+    font-size: 4rem;
+  }
+  .contact--subheadline {
+    font-size: 2.2rem;
+  }
+  .contact--form--input {
+    font-size: 1.8rem;
+    height: 3rem;
+    margin-bottom: 4px;
+  }
+  .contact--form--submit {
+    padding: 5px 10px;
+    margin-top: 0.5rem;
+    font-size: 1.8rem;
+  }
+  #message {
+    height: 12rem;
+  }
+  .footer {
+    height: 200px;
+  }
+  .footer--socials {
+    font-size: 3rem;
+  }
+  .footer--copyright {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header--socials {
+    font-size: 2.5rem;
+  }
+  .me {
+    padding: 10% 0;
+  }
+  .me--name {
+    font-size: 4rem;
+  }
+  .me--rule {
+    width: 40%;
+  }
+  .me--job-title {
+    font-size: 2rem;
+  }
+  .links {
+    padding: 2.5% 5%;
+  }
+  .about {
+    padding: 20% 15% 10% 15%;
+  }
+  .about--hello {
+    font-size: 4rem;
+  }
+  .about--name {
+    font-size: 3.6rem;
+  }
+  .about p {
+    font-size: 1.3rem;
+    line-height: 2;
+    letter-spacing: 1px;
+  }
+  .card-half {
+    height: 80%;
+  }
+  .cards {
+    width: 95%;
+    background-color: transparent;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .cards--card {
+    background-color: #68a2b9;
+    border-radius: 6px;
+    width: 30%;
+  }
+  .cards--card span {
+    font-size: 6rem;
+  }
+  .cards--card--headline {
+    font-size: 2rem;
+  }
+  .cards--card--desc {
+    font-size: 1.2rem;
+  }
+  .skills {
+    padding: 10% 0;
+  }
+  .skills--headline {
+    font-size: 3.5rem;
+  }
+  .skills--subheadline {
+    font-size: 2.5rem;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    margin-left: 8%;
+  }
+  .skills--list--skill {
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;
+    margin-bottom: 1.5rem;
+  }
+  .skills--list--skill--logo {
+    font-size: 6rem;
+  }
+  .skills--list--skill--name {
+    font-size: 1rem;
+  }
+  .projects {
+    padding: 10% 0;
+    overflow: hidden;
+  }
+  .projects--headline {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  .projects--project {
+    background: transparent;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .projects--project--image {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    width: 80%;
+    margin-right: -25%;
+  }
+  .projects--project--text {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    -ms-flex-item-align: center;
+        align-self: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    margin-right: 4rem;
+  }
+  .projects--project--text--name {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .projects--project--text--desc {
+    font-size: 1rem;
+    text-align: right;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+  }
+  .projects--project--text a {
+    font-size: 1.2rem;
+  }
+  .feedback {
+    padding: 10%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .contact {
+    width: 80%;
+  }
+  .contact--headline {
+    font-size: 3rem;
+  }
+  .contact--subheadline {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  .contact--form {
+    width: 80%;
+  }
+  .contact--form--input {
+    font-size: 1rem;
+    height: 1.8rem;
+  }
+  .contact--form--submit {
+    font-size: 1.2rem;
+  }
+  #message {
+    height: 10rem;
+  }
+  .footer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 125px;
+    padding: 0 2rem;
+  }
+  .footer--socials {
+    -ms-flex-preferred-size: 60%;
+        flex-basis: 60%;
+    font-size: 2rem;
+  }
+  .footer--copyright {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .me {
+    padding: 10% 0;
+  }
+  .me--name {
+    font-size: 5rem;
+  }
+  .links {
+    padding: 2.5% 15%;
+  }
+  .links--link {
+    font-size: 2.5rem;
+  }
+  .links--bullet {
+    font-size: 1rem;
+  }
+  .about {
+    padding: 10% 15%;
+  }
+  .about--hello {
+    font-size: 5rem;
+    margin-bottom: -10%;
+  }
+  .about--name {
+    font-size: 4.6rem;
+  }
+  .about p {
+    font-size: 1.5rem;
+  }
+  .card-half {
+    height: 100%;
+    margin-top: -1px;
+  }
+  .cards {
+    width: 90%;
+  }
+  .cards--card {
+    padding: 2rem;
+  }
+  .cards--card span {
+    font-size: 8rem;
+  }
+  .cards--card--headline {
+    font-size: 2.5rem;
+  }
+  .cards--card--desc {
+    font-size: 1.4rem;
+  }
+  .skills--headline {
+    font-size: 4.5rem;
+  }
+  .skills--subheadline {
+    font-size: 3rem;
+  }
+  .skills--list--skill {
+    margin-bottom: 2rem;
+  }
+  .skills--list--skill--logo {
+    font-size: 7rem;
+  }
+  .skills--list--skill--name {
+    font-size: 1.5rem;
+  }
+  .projects--headline {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+  }
+  .projects--project--text--name {
+    font-size: 3rem;
+  }
+  .projects--project--text--desc {
+    font-size: 1.3rem;
+  }
+  .projects--project--text a {
+    font-size: 1.6rem;
+  }
+  .contact {
+    width: 90%;
+  }
+  .contact--headline {
+    font-size: 4rem;
+  }
+  .contact--subheadline {
+    font-size: 2.7rem;
+  }
+  .contact--form--input {
+    font-size: 1.5rem;
+    height: 2.2rem;
+    margin-bottom: 0.4rem;
+  }
+  .contact--form--submit {
+    font-size: 1.6rem;
+  }
+  .footer {
+    height: 150px;
+  }
+  .footer--socials {
+    font-size: 3rem;
+  }
+  .footer--copyright {
+    font-size: 1rem;
+    margin-right: 1rem;
+  }
 }

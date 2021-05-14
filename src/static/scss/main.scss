@@ -1,4 +1,4 @@
-@import "config", "responsive", "color-themes", "colors", "fonts";
+@import "config", "color-themes", "colors", "fonts";
 
 .header {
     background-color: $primary-bg--dark;
@@ -11,17 +11,17 @@
     &--theme {
         display: none;
         // display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: $secondary-text--dark;
+        // flex-direction: column;
+        // align-items: center;
+        // color: $secondary-text--dark;
 
-        &--icon {
-            font-size: 1.5rem;
-        }
+        // &--icon {
+        //     font-size: 1.5rem;
+        // }
 
-        &--text {
-            font-size: 0.75rem;
-        }
+        // &--text {
+        //     font-size: 0.75rem;
+        // }
     }
 
     &--socials {
@@ -51,7 +51,7 @@
     &--rule {
         height: 0.25rem;
         width: 60%;
-        border-radius: 2;
+        border-radius: 1px;
         background-color: $accent--dark;
         margin-top: 0.75rem;
         margin-bottom: 1rem;
@@ -132,6 +132,9 @@
         $primary-bg--dark 50%
     );
     height: 110%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cards {
@@ -141,7 +144,6 @@
     padding: 1rem;
     width: 90%;
     border-radius: 6px;
-    margin-left: 5%;
     color: $white;
 
     &--card {
@@ -225,6 +227,9 @@
     background-color: $secondary-bg--dark;
     color: $white;
     padding: 20% 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     &--headline {
         font-family: $primary-font--dark;
@@ -339,14 +344,6 @@
     resize: none;
 }
 
-.reply-true {
-    display: none;
-}
-
-.reply-false {
-    display: none;
-}
-
 .footer {
     background-color: $black;
     color: white;
@@ -367,3 +364,5 @@
         text-align: center;
     }
 }
+
+@import "responsive";
