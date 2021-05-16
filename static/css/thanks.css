@@ -382,12 +382,15 @@ a {
   }
   .links {
     padding: 2.5% 15%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
   .links--link {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
   .links--bullet {
-    font-size: 1rem;
+    margin: 0.2rem 1rem 0 0;
+    font-size: 0.6rem;
   }
   .about {
     padding: 10% 15%;

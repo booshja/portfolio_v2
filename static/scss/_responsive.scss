@@ -397,13 +397,15 @@
 
     .links {
         padding: 2.5% 15%;
+        justify-content: space-around;
 
         &--link {
-            font-size: 2.5rem;
+            font-size: 1.5rem;
         }
 
         &--bullet {
-            font-size: 1rem;
+            margin: 0.2rem 1rem 0 0;
+            font-size: 0.6rem;
         }
     }
 
