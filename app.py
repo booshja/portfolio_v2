@@ -75,18 +75,8 @@ def homepage():
     GET ROUTE:
     - Redirect to construction page
     """
-    # form = ContactForm()
-    # return render_template("/main/index.html", form=form)
-    return redirect("/construction")
-
-
-@app.route("/construction")
-def construction_page():
-    """
-    GET ROUTE:
-    - Construction landing page
-    """
-    return render_template("/construction.html")
+    form = ContactForm()
+    return render_template("/main/index.html", form=form)
 
 
 @app.route("/contact", methods=["POST"])

@@ -21,27 +21,33 @@ a {
     color: inherit;
 }
 
-@mixin media-sm {
+@mixin mobile-sm {
     @media screen and (min-width: 414px) {
         @content;
     }
 }
 
 /** Media Queries */
-@mixin media-md {
+@mixin mobile-md {
     @media screen and (min-width: 768px) {
         @content;
     }
 }
 
-@mixin media-lg {
+@mixin mobile-lg {
     @media screen and (min-width: 1024px) {
         @content;
     }
 }
 
-@mixin media-xl {
-    @media screen and (min-width: 1366px) {
+@mixin desktop-md {
+    @media screen and (min-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin desktop-lg {
+    @media screen and (min-width: 1536px) {
         @content;
     }
 }

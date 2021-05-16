@@ -132,22 +132,35 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.about--hello {
+.about--greeting {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  height: 50px;
+}
+
+.about--greeting--hello {
   font-family: "Poppins", sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   letter-spacing: 5px;
-  margin-left: 2rem;
 }
 
-.about--name {
-  font-size: 1.8rem;
+.about--greeting--name {
+  font-size: 1.5rem;
   font-weight: 400;
   letter-spacing: 3px;
-  margin-right: 2rem;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
 }
 
 .about p {
@@ -518,6 +531,19 @@ a {
   .links--bullet {
     font-size: 0.4rem;
   }
+  .about--greeting {
+    height: 55px;
+  }
+  .about--greeting--hello {
+    font-size: 1.7rem;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  .about--greeting--name {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    font-size: 1.7rem;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -548,11 +574,20 @@ a {
   .about {
     padding: 20% 10%;
   }
-  .about--hello {
-    font-size: 4rem;
+  .about--greeting {
+    height: 55px;
+    width: 85%;
+    margin-bottom: 1rem;
   }
-  .about--name {
-    font-size: 3.6rem;
+  .about--greeting--hello {
+    font-size: 3rem;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  .about--greeting--name {
+    font-size: 3rem;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
   }
   .about p {
     font-size: 1.7rem;
@@ -648,11 +683,19 @@ a {
   .about {
     padding: 20% 15% 10% 15%;
   }
-  .about--hello {
-    font-size: 4rem;
+  .about--greeting {
+    width: 90%;
+    margin-bottom: 1.5rem;
   }
-  .about--name {
+  .about--greeting--hello {
+    font-size: 4rem;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  .about--greeting--name {
     font-size: 3.6rem;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
   }
   .about p {
     font-size: 1.3rem;
@@ -822,15 +865,18 @@ a {
   }
 }
 
-@media screen and (min-width: 1366px) {
+@media screen and (min-width: 1280px) {
   .me {
-    padding: 10% 0;
+    padding: 2.5% 0;
   }
   .me--name {
     font-size: 5rem;
   }
+  .me--job-title {
+    font-size: 2.5rem;
+  }
   .links {
-    padding: 2.5% 15%;
+    padding: 1% 30%;
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
@@ -838,94 +884,152 @@ a {
     font-size: 1.5rem;
   }
   .links--bullet {
-    margin: 0.2rem 1rem 0 0;
+    margin: 0.2rem 0.5rem 0 0.5rem;
     font-size: 0.6rem;
   }
   .about {
     padding: 10% 15%;
   }
-  .about--hello {
-    font-size: 5rem;
-    margin-bottom: -10%;
+  .about--greeting {
+    width: 60%;
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
   }
-  .about--name {
-    font-size: 4.6rem;
+  .about--greeting--hello {
+    font-size: 3rem;
+  }
+  .about--greeting--name {
+    font-size: 3rem;
   }
   .about p {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
   .card-half {
-    height: 100%;
     margin-top: -1px;
   }
   .cards {
-    width: 90%;
+    width: 80%;
   }
   .cards--card {
     padding: 2rem;
+    -webkit-box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.2);
   }
   .cards--card span {
-    font-size: 8rem;
+    font-size: 4rem;
   }
   .cards--card--headline {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
   .cards--card--desc {
-    font-size: 1.4rem;
+    font-size: 1rem;
+  }
+  .skills {
+    padding: 5% 15%;
   }
   .skills--headline {
-    font-size: 4.5rem;
+    font-size: 3rem;
   }
   .skills--subheadline {
-    font-size: 3rem;
+    font-size: 2rem;
+  }
+  .skills--list {
+    width: 70%;
   }
   .skills--list--skill {
     margin-bottom: 2rem;
   }
   .skills--list--skill--logo {
-    font-size: 7rem;
+    font-size: 4rem;
   }
   .skills--list--skill--name {
-    font-size: 1.5rem;
+    font-size: 1rem;
+  }
+  .projects {
+    padding: 5% 0;
   }
   .projects--headline {
-    font-size: 4rem;
-    margin-bottom: 3rem;
+    font-size: 3rem;
+    margin-bottom: 2rem;
   }
   .projects--project--text--name {
-    font-size: 3rem;
+    font-size: 2rem;
+  }
+  .projects--project--text--image {
+    width: 60%;
   }
   .projects--project--text--desc {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
   .projects--project--text a {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
+  }
+  .feedback {
+    padding: 5% 10%;
   }
   .contact {
     width: 90%;
   }
   .contact--headline {
-    font-size: 4rem;
-  }
-  .contact--subheadline {
-    font-size: 2.7rem;
-  }
-  .contact--form--input {
-    font-size: 1.5rem;
-    height: 2.2rem;
-    margin-bottom: 0.4rem;
-  }
-  .contact--form--submit {
-    font-size: 1.6rem;
-  }
-  .footer {
-    height: 150px;
-  }
-  .footer--socials {
     font-size: 3rem;
   }
+  .contact--subheadline {
+    font-size: 1.5rem;
+  }
+  .contact--form--input {
+    font-size: 1.2rem;
+    height: 2rem;
+    margin-bottom: 0.4rem;
+    -webkit-box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.2);
+  }
+  .contact--form--submit {
+    font-size: 1.2rem;
+    -webkit-box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.2);
+  }
+  .footer {
+    height: 100px;
+  }
+  .footer--socials {
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+    font-size: 2rem;
+  }
   .footer--copyright {
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin-right: 1rem;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  .links--bullet {
+    margin: 0 20px;
+  }
+  .about--greeting {
+    width: 550px;
+    -webkit-transform: translateX(-210px);
+            transform: translateX(-210px);
+  }
+  .about p {
+    width: 1000px;
+  }
+  .cards {
+    width: 1200px;
+  }
+  .contact--form {
+    width: 750px;
   }
 }
