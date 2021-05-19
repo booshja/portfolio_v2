@@ -1,11 +1,20 @@
 import os
-from flask import Flask, render_template, redirect, session, g, abort
+from flask import (
+    Flask,
+    render_template,
+    redirect,
+    session,
+    g,
+    abort,
+    request,
+    send_from_directory,
+)
 from flask_mail import Mail, Message
 
 from models import db, connect_db, Feedback, Admin
 from forms import LoginForm, ContactForm, RegisterForm
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="")
 
 uri = os.getenv("DATABASE_URL")
 if uri.startswith("postgres://"):
@@ -204,9 +213,9 @@ def show_thanks():
 #     return redirect("/")
 
 
-#####################################
-# Open Graph & Favicon Image Routes ###
-#####################################
+####################################
+# Open Graph and robots.txt Routes ####
+####################################
 
 
 @app.route("/ogimg/ogimg.png")
@@ -216,6 +225,11 @@ def return_og_img():
     - Returns the image for the Open Graph Image Meta
     """
     return "<img src='/static/images/og_img.png' />"
+
+
+@app.route("/robots.txt")
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
 
 
 #######################
