@@ -1,11 +1,11 @@
 import os
-from flask import Flask, render_template, redirect, session, g, abort, static_url_path
+from flask import Flask, render_template, redirect, session, g, abort
 from flask_mail import Mail, Message
 
 from models import db, connect_db, Feedback, Admin
 from forms import LoginForm, ContactForm, RegisterForm
 
-app = Flask(__name__, static_url_path == "/")
+app = Flask(__name__, static_url_path == "/", static_folder="public")
 
 uri = os.getenv("DATABASE_URL")
 if uri.startswith("postgres://"):
