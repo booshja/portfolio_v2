@@ -5,7 +5,7 @@ from flask_mail import Mail, Message
 from models import db, connect_db, Feedback, Admin
 from forms import LoginForm, ContactForm, RegisterForm
 
-app = Flask(__name__, static_url_path == "/", static_folder="public")
+app = Flask(__name__, static_url_path="/", static_folder="public")
 
 uri = os.getenv("DATABASE_URL")
 if uri.startswith("postgres://"):
