@@ -205,7 +205,7 @@ def show_thanks():
 
 
 ####################
-# Open Graph Route #################
+# Open Graph Route ########################################
 ####################
 
 
@@ -216,6 +216,15 @@ def return_og_img():
     - Returns the image for the Open Graph Image Meta
     """
     return "<img src='/static/images/og_img.png' />"
+
+
+@app.route("/robots.txt")
+def return_robots():
+    """
+    GET ROUTE:
+    - Returns the robots.txt file
+    """
+    return render_template("/robots.txt")
 
 
 #######################

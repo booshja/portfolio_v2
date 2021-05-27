@@ -1,0 +1,27 @@
+@import "config", "colors", "fonts";
+
+body {
+    background-color: $secondary-bg--dark;
+}
+
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $white;
+    padding-top: 2rem;
+
+    &--name {
+        font-family: $primary-font--dark;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    &--return {
+        font-family: $secondary-font--dark;
+
+        &--link {
+            color: $secondary-text--dark;
+        }
+    }
+}

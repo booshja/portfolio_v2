@@ -409,6 +409,18 @@
             font-size: 0.8rem;
         }
     }
+
+    .thanks {
+        align-items: center;
+
+        &--text {
+            width: 50%;
+        }
+
+        &--link {
+            transform: translateX(-7rem);
+        }
+    }
 }
 
 @include desktop-md {

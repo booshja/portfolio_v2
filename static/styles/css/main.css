@@ -863,6 +863,18 @@ a {
   .footer--copyright {
     font-size: 0.8rem;
   }
+  .thanks {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .thanks--text {
+    width: 50%;
+  }
+  .thanks--link {
+    -webkit-transform: translateX(-7rem);
+            transform: translateX(-7rem);
+  }
 }
 
 @media screen and (min-width: 1280px) {
