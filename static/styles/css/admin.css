@@ -306,16 +306,9 @@ a {
     display: flex;
   }
   .projects--project--image {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
     width: 80%;
-    margin-right: -25%;
   }
   .projects--project--text {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
     -ms-flex-item-align: center;
         align-self: center;
     display: -webkit-box;
@@ -325,10 +318,6 @@ a {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-    margin-right: 4rem;
   }
   .projects--project--text--name {
     font-size: 2rem;
@@ -336,12 +325,68 @@ a {
   }
   .projects--project--text--desc {
     font-size: 1rem;
-    text-align: right;
     margin-bottom: 1rem;
     letter-spacing: 1px;
   }
   .projects--project--text a {
     font-size: 1.2rem;
+  }
+  .standard--img {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin-right: -25%;
+  }
+  .standard--name {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  .standard--text {
+    margin-right: 4rem;
+    text-align: right;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .standard--text--desc {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .standard--link {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+  .reverse--img {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    margin-left: -25%;
+  }
+  .reverse--name {
+    text-align: center;
+  }
+  .reverse--text {
+    margin-left: 4rem;
+    text-align: left;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .reverse--text--desc {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .reverse--link {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  .border {
+    border: none;
   }
   .feedback {
     padding: 10%;
