@@ -103,8 +103,7 @@
 
     &--greeting {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        align-items: baseline;
         width: 80%;
         height: 50px;
 
@@ -115,6 +114,7 @@
         }
 
         &--name {
+            margin-left: 2rem;
             font-size: 1.5rem;
             font-weight: 400;
             letter-spacing: 3px;
@@ -127,6 +127,12 @@
         font-size: 1rem;
         font-weight: 400;
         line-height: 1.5;
+    }
+
+    &--bio2--beth {
+        font-weight: 500;
+        font-family: $primary-font--dark;
+        text-decoration: underline;
     }
 }
 
@@ -224,6 +230,7 @@
 
             &--name {
                 font-family: $secondary-font--dark;
+                text-align: center;
             }
         }
     }
@@ -253,7 +260,6 @@
 
         &--image {
             width: 100%;
-            height: 100%;
             border-radius: 3px;
         }
 

@@ -7,23 +7,6 @@
             src="https://kit.fontawesome.com/396432886d.js"
             crossorigin="anonymous"
         ></script>
-        <!-- Google Tag Manager -->
-        <script>
-            (function (w, d, s, l, i) {
-                w[l] = w[l] || [];
-                w[l].push({
-                    "gtm.start": new Date().getTime(),
-                    event: "gtm.js",
-                });
-                var f = d.getElementsByTagName(s)[0],
-                    j = d.createElement(s),
-                    dl = l != "dataLayer" ? "&l=" + l : "";
-                j.async = true;
-                j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-                f.parentNode.insertBefore(j, f);
-            })(window, document, "script", "dataLayer", "GTM-KQHNVTQ");
-        </script>
-        <!-- End Google Tag Manager -->
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <link rel="canonical" href="https://jacobandes.dev" />
         <link
@@ -112,8 +95,15 @@
                 </p>
                 <p class="about--bio2">
                     When I'm not coding, you can find me spending time with my
-                    girlfriend and dogs, watching hockey, or clumsily learning
-                    how to skate and play hockey.
+                    <a
+                        href="https://paintingjoy.art"
+                        target="_blank"
+                        rel="noopener"
+                        class="about--bio2--beth"
+                        >girlfriend</a
+                    >
+                    and dogs, watching hockey, or clumsily learning how to skate
+                    and play hockey.
                 </p>
             </section>
             <section class="card-half">
@@ -155,10 +145,6 @@
                 <h3 class="skills--subheadline">Currently Using</h3>
                 <div class="skills--list">
                     {% include '/main/current-skill-icons.html' %}
-                </div>
-                <h3 class="skills--subheadline">Currently Learning</h3>
-                <div class="skills--list">
-                    {% include '/main/learning-skill-icons.html' %}
                 </div>
             </section>
             <section class="projects">

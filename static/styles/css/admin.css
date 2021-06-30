@@ -74,12 +74,8 @@ a {
   }
   .about--greeting--hello {
     font-size: 1.7rem;
-    -ms-flex-item-align: start;
-        align-self: flex-start;
   }
   .about--greeting--name {
-    -ms-flex-item-align: end;
-        align-self: flex-end;
     font-size: 1.7rem;
   }
 }
@@ -119,13 +115,9 @@ a {
   }
   .about--greeting--hello {
     font-size: 3rem;
-    -ms-flex-item-align: end;
-        align-self: flex-end;
   }
   .about--greeting--name {
     font-size: 3rem;
-    -ms-flex-item-align: start;
-        align-self: flex-start;
   }
   .about p {
     font-size: 1.7rem;
@@ -227,13 +219,9 @@ a {
   }
   .about--greeting--hello {
     font-size: 4rem;
-    -ms-flex-item-align: end;
-        align-self: flex-end;
   }
   .about--greeting--name {
     font-size: 3.6rem;
-    -ms-flex-item-align: start;
-        align-self: flex-start;
   }
   .about p {
     font-size: 1.3rem;
