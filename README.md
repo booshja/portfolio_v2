@@ -32,7 +32,7 @@ This project uses pre-commit hooks with isort, black, and flake8.
     -   SQLAlchemy
     -   Flask-WTF
 -   PostgreSQL
--   AWS
+-   Heroku
 
 ---
 
